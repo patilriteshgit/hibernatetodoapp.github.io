@@ -13,7 +13,6 @@ pageEncoding="UTF-8"%>
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 <title>Todo List</title>
 </head>
 <body>
@@ -24,13 +23,14 @@ pageEncoding="UTF-8"%>
       <th scope="col">Title</th>
       <th scope="col">Description</th>
       <th scope="col">Date Added</th>
+      <th scope="col">Operation</th>
     </tr>
   </thead>
   <tbody>
   <%
     SessionFactory factory=new Configuration().configure().buildSessionFactory();
     Session seshion = factory.openSession();
-    Transaction transaction = seshion.beginTransaction();
+    seshion.beginTransaction();
     Query query = seshion.createQuery("FROM Task");
     List<Task> tasks = query.list();
     for (Task task : tasks) {
@@ -39,11 +39,12 @@ pageEncoding="UTF-8"%>
         <td><%= task.getTitle()+" : " %></td>
         <td><%= task.getDescription() %></td>
         <td><%= task.getAddeddate() %></td>
+        <td><a href="deljsp.jsp?note_id=<%=task.getId()%>" class="btn btn-danger">DELETE</a></td>
       <br>
       </tr>
   <%
     }
-    transaction.commit();
+    seshion.getTransaction().commit();
     seshion.close();
   %>
 </tbody>

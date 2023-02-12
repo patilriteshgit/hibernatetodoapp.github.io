@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      .footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+      }
+    </style>
+    <title>Project Name - Home</title>
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1 class="text-center">JAVA TODO TASKS WEB APPLICATION USING HIBERNATE</h1>
+      <p class="text-justify mt-3">
+        This is the Home page of this project which directs to the index.html page Task input form.
+        which takes input from the user and by form action submit & method post it sends the data to the HTTPservlet in which by the doPost method values are fetched 
+        and then processed to store in MySQL DB by Hibernate.
+        Html page have another button to the all tasks JSP page in which the data is fetched and displayed by hibernate query HQL.
+        In all tasks page each task have an delet operation to perform delet operation of task,
+        delet button sends the data through URL Rewriting to the deljsp page which performs update operation.
+      </p>
+      <div class="d-flex justify-content-center my-5">
+        <a href="index.html" class="btn btn-primary">Register</a>
+      </div>
+    </div>
+    <div class="footer bg-light py-3">
+      <div class="container">
+        <p class="text-right pr-3">Made by Ritesh Patil</p>
+      </div>
+    </div>
+  </body>
+</html>
+

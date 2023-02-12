@@ -22,7 +22,7 @@ public class AddTaskServlet extends HttpServlet {
       throws ServletException, IOException {
         response.setContentType("text/HTML");
         PrintWriter out =response.getWriter();
-    int id =Integer.parseInt(request.getParameter("intid"));
+//    int id =Integer.parseInt(request.getParameter("intid"));
     String tit = request.getParameter("title");
     String descri = request.getParameter("description");
 SessionFactory factory=new Configuration().configure().buildSessionFactory();
